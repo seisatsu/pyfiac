@@ -1,0 +1,39 @@
+#PyFiAC Configuration File
+
+#Looked for in:
+#~/.pyfiac.conf
+#./pyfiac.conf
+#/etc/pyfiac.conf
+
+#Currently tested with wep only.
+
+[defaults]
+global.wifidev = wlan0				#Device to use for wireless connections
+global.dhcpd = dhcpcd				#DHCP daemon to use
+network.nameserver1 = 8.8.4.4			#First nameserver
+network.nameserver2 = 8.8.8.8			#Second nameserver
+
+[preset(1)]					#Preset number 1
+network.connect = static			#Type of connection, can be static or dhcp
+network.ip = 192.168.1.128			#IP address to use for static connections
+network.netmask = 255.255.255.0			#Netmask to use for static connections
+network.gateway = 192.168.1.1			#Gateway to use for static connections
+
+[preset(2)]
+network.connect = static
+network.ip = 192.168.0.128
+network.netmask = 255.255.255.0
+network.gateway = 192.168.0.1
+
+[network]
+network.preset = 1				#Use values from preset 1
+network.essid = jiangweb			#Network name
+network.encryption = wep			#Network encryption, can be wep, wpa, or none
+network.key = 29fe47ad84354e0bbd995ded6a 	#Network key, prefix with "s:" if not hex.
+
+[network]
+network.connect = dhcp
+network.essid = othertest
+network.encryption = wep
+network.key = s:omgwtfbbqkthx
+
