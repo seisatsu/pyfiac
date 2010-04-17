@@ -5,13 +5,8 @@
 #./pyfiac.conf
 #/etc/pyfiac.conf
 
-#Currently tested with wep only.
-
 [defaults]
 global.wifidev = wlan0				#Device to use for wireless connections
-global.dhcpd = dhcpcd				#DHCP daemon to use
-network.nameserver1 = 8.8.4.4			#First nameserver
-network.nameserver2 = 8.8.8.8			#Second nameserver
 
 [preset(1)]					#Preset number 1
 network.connect = static			#Type of connection, can be static or dhcp
